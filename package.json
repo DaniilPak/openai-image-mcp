@@ -1,0 +1,57 @@
+{
+  "name": "openai-image-mcp",
+  "version": "1.0.0",
+  "description": "MCP server for OpenAI image generation and editing (gpt-image-2.5-flare, gpt-image-2.5-sunburst, gpt-image-2, gpt-image-1.5, gpt-image-1-mini) with per-call model selection. Works with Claude Code, Claude Desktop, Cursor and any MCP client.",
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "mcp-server",
+    "openai",
+    "gpt-image",
+    "gpt-image-2",
+    "image-generation",
+    "image-editing",
+    "claude",
+    "claude-code"
+  ],
+  "homepage": "https://github.com/DaniilPak/openai-image-mcp#readme",
+  "bugs": {
+    "url": "https://github.com/DaniilPak/openai-image-mcp/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DaniilPak/openai-image-mcp.git"
+  },
+  "license": "MIT",
+  "author": "Daniil Pak",
+  "type": "module",
+  "main": "dist/index.js",
+  "bin": {
+    "openai-image-mcp": "dist/index.js"
+  },
+  "files": [
+    "dist/index.js",
+    "dist/models.js",
+    "dist/openai.js",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "tsc --watch",
+    "test": "npm run build && node --test dist/*.test.js",
+    "prepublishOnly": "npm run build"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.32.2",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.5",
+    "typescript": "^7.0.2"
+  }
+}
